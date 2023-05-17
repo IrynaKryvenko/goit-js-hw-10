@@ -39,8 +39,8 @@ function displayResults(countries) {
 }
 
 function displayCountryList(countries) {
-  countryListInsert.innerHTML = '';
-  oneCountryInsert.innerHTML = '';
+  countryListEl.innerHTML = '';
+  countryInfoEl.innerHTML = '';
 
   countries.forEach(country => {
     const { flags, name } = country;
