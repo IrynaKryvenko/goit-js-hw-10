@@ -7,10 +7,10 @@ const DEBOUNCE_DELAY = 300;
 
 const inputEl = document.querySelector('input#search-box');
 const countryListEl = document.querySelector('.country-list');
-const countryInfoEl = document.querySelector('.country-info');
+const countryInfoEl= document.querySelector('.country-info');
 
 function searchCountries() {
-  const searchTerm = countryListEl.value.trim();
+  const searchTerm = inputEl.value.trim();
   if (searchTerm === '') {
     clearResults();
     return;
@@ -45,7 +45,7 @@ function displayCountryList(countries) {
   countries.forEach(country => {
     const { flags, name } = country;
     const countryItem = `
-      <li style="display: flex; gap: 30px; margin-bottom: 20px; align-items: center">
+      <li style="display: flex; gap: 20px; margin-bottom: 10px; align-items: center">
         <img width="32"  src="${flags.png}" alt="flag" />
         <p>${name.official}</p>
       </li>
@@ -59,7 +59,7 @@ function displayCountryInfo(country) {
   const langArray = Object.values(languages).join(', ');
 
   const countryInfo = `
-    <div style="display: flex; gap: 30px; margin-bottom: 30px">
+    <div style="display: flex; gap: 20px; margin-bottom: 30px">
       <img width="50px" src="${flags.png}" alt="flag" />
       <h2>${name.official}</h2>
     </div>
