@@ -7,7 +7,7 @@ const DEBOUNCE_DELAY = 300;
 
 const inputEl = document.querySelector('input#search-box');
 const countryListEl = document.querySelector('.country-list');
-const countryInfoEl= document.querySelector('.country-info');
+const countryInfoEl = document.querySelector('.country-info');
 
 function searchCountries() {
   const searchTerm = inputEl.value.trim();
@@ -25,7 +25,7 @@ function searchCountries() {
 
 function clearResults() {
   countryListEl.innerHTML = '';
-  countryInfoEl.innerHTML = '';
+  countryInfoEl .innerHTML = '';
 }
 
 function displayResults(countries) {
@@ -40,13 +40,13 @@ function displayResults(countries) {
 
 function displayCountryList(countries) {
   countryListEl.innerHTML = '';
-  countryInfoEl.innerHTML = '';
+  countryInfoEl .innerHTML = '';
 
   countries.forEach(country => {
     const { flags, name } = country;
     const countryItem = `
-      <li style="display: flex; gap: 20px; margin-bottom: 10px; align-items: center">
-        <img width="32"  src="${flags.png}" alt="flag" />
+      <li style="display: flex; gap: 30px; margin-bottom: 20px; align-items: center">
+        <img width="50px"  src="${flags.png}" alt="flag" />
         <p>${name.official}</p>
       </li>
     `;
@@ -59,8 +59,8 @@ function displayCountryInfo(country) {
   const langArray = Object.values(languages).join(', ');
 
   const countryInfo = `
-    <div style="display: flex; gap: 20px; margin-bottom: 30px">
-      <img width="50px" src="${flags.png}" alt="flag" />
+    <div style="display: flex; gap: 30px; margin-bottom: 30px">
+      <img width="100px" src="${flags.png}" alt="flag" />
       <h2>${name.official}</h2>
     </div>
     <ul>
@@ -69,7 +69,7 @@ function displayCountryInfo(country) {
       <li><strong>Languages:</strong> ${langArray}</li>
     </ul>
   `;
-  countryInfoEl.innerHTML = countryInfo;
+countryInfoEl .innerHTML = countryInfo;
 }
 
 inputEl.addEventListener('input', debounce(searchCountries, DEBOUNCE_DELAY));
